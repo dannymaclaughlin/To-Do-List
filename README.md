@@ -1,2 +1,2 @@
-# BasicWebpackTemplate
-This repo is setup to have only the basic webpack stuff completed to use as a template.
+# To-Do List
+A To-Do List application made using JavaScript, HTML, and CSS.
