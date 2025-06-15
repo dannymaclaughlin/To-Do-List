@@ -1,14 +1,15 @@
 const form = document.querySelector('form');
 
+const taskListArray = []; // an array outside of the submit eventlistener to store formData objects(tasks)
+
 // an eventlistener for when the form is submitted. executes below function upon form submission.
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // prevents page from auto-refreshing after submission
 
-    // creates a FormData object and passes the form itself as an argument(value)
-    const formData = new FormData(form);
+    
+    const formData = new FormData(form); // creates a FormData object and passes the form itself as an argument(value)
+    const formArray = Array.from(formData); // creates an array from the formData objects
+    taskListArray.push(formArray); // pushes the formArray to the taskListArray upon form submission
 
-    // iterates through the formData object and executes a function
-    for (item of formData) {
-        console.log(item[0], item[1]);
-    }
+    console.log(taskListArray);
 })
