@@ -10,4 +10,5 @@ const newTaskButton = document.getElementById('new-task-button');
     // will eventually make form pop up/display form when clicked
 newTaskButton.addEventListener('click', function() {
     displayForm();
+    console.log("test")
 });

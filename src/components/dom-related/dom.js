@@ -24,15 +24,13 @@ export function displayForm() {
     const modalOpenButton = document.getElementById("new-task-button");
     const formSubmitButton = document.getElementById("submit-button");
 
-    modalOpenButton.onclick = function() {
-        modal.style.display = "block";
-    }
+    modal.style.display = "block"; // when displayForm() is executed, the modal's display is set to block(visible)
 
-    formSubmitButton.onclick = function() {
+    formSubmitButton.onclick = function() { // modal's display is set to none(not visible) upon click of the form submit button
         modal.style.display = "none";
     }
     
-    window.onclick = function(e) {
+    window.onclick = function(e) { // 
         if (e.target == modal) {
             modal.style.display = "none";
         }
