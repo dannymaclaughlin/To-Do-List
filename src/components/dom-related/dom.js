@@ -1,3 +1,5 @@
+import { taskListArray } from "../app-logic/logic";
+
 const tasknameInput = document.querySelector("#taskname");
 const tasknameOutput = document.querySelector("#taskname-output");
 const taskDescriptionInput = document.querySelector("#task-description");
@@ -14,3 +16,25 @@ submitButton.addEventListener('click', function() {
 
     // tasknameInput.remove();
 });
+
+// display's form
+export function displayForm() {
+    const taskOutputArea = document.querySelector("#task-output-area");
+    const modal = document.getElementById("my-modal");
+    const modalOpenButton = document.getElementById("new-task-button");
+    const formSubmitButton = document.getElementById("submit-button");
+
+    modalOpenButton.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    formSubmitButton.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    window.onclick = function(e) {
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
