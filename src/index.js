@@ -7,8 +7,6 @@ import "./styles/styles.css"
 const newTaskButton = document.getElementById('new-task-button');
 
 // an eventlistener for when the 'NewTaskButton' is clicked
-    // will eventually make form pop up/display form when clicked
 newTaskButton.addEventListener('click', function() {
-    displayForm();
-    console.log("test")
+    displayForm(); // makes modal visible(which contains the form)
 });

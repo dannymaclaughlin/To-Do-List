@@ -10,16 +10,15 @@ const submitButton = document.querySelector("#submit-button");
 
 // an eventlistener for when the 'submitButton' is clicked
 submitButton.addEventListener('click', function() {
-    tasknameOutput.innerText = tasknameInput.value;
-    taskDescriptionOutput.innerText = taskDescriptionInput.value;
-    dueDateOutput.innerText = dueDateInput.value;
+    // tasknameOutput.innerText = tasknameInput.value;
+    // taskDescriptionOutput.innerText = taskDescriptionInput.value;
+    // dueDateOutput.innerText = dueDateInput.value;
 
     // tasknameInput.remove();
 });
 
 // display's form
 export function displayForm() {
-    const taskOutputArea = document.querySelector("#task-output-area");
     const modal = document.getElementById("my-modal");
     const modalOpenButton = document.getElementById("new-task-button");
     const formSubmitButton = document.getElementById("submit-button");
@@ -36,3 +35,14 @@ export function displayForm() {
         }
     }
 }
+
+export function displayTask() {
+    const taskOutputArea = document.querySelector("#task-output-area");
+
+    const newDiv = document.createElement("div");
+        newDiv.classList.add("task-div-element");
+    taskOutputArea.append(newDiv);
+
+
+    newDiv.innerText = tasknameInput.value;
+};
