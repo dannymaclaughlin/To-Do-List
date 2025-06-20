@@ -14,4 +14,6 @@ form.addEventListener('submit', (e) => {
         console.log(taskListArray);
 
     displayTask();
+
+    form.reset();
 })
