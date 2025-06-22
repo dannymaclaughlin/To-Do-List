@@ -27,8 +27,10 @@ export function displayForm() {
 };
 
 export function displayTask() {
-    let checkboxLabel = createTaskStructure();
-        checkboxLabel.append(tasknameInput.value);
+    let { checkboxLabel, taskDescription, dueDate } = createTaskStructure(); // creates a reference to the returned elements of the createTaskStructure function
+        checkboxLabel.append(tasknameInput.value); // appends the value of tasknameInput to checkboxLabel(which is essentially a reference to checkboxLabel in the createTaskStructure function
+        taskDescription.append(taskDescriptionInput.value);
+        dueDate.append(dueDateInput.value);
 };
 
 export function createTaskStructure() {
@@ -48,5 +50,9 @@ export function createTaskStructure() {
         taskDescription.classList.add("task-description-div");
         newDiv.append(taskDescription);
 
-    return checkboxLabel;
+    const dueDate = document.createElement("div");
+        dueDate.classList.add("duedate-div");
+        newDiv.append(dueDate);
+
+    return { checkboxLabel, taskDescription, dueDate }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }

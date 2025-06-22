@@ -24,12 +24,14 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding-bottom: .5em;
 }
 
 .task-div-element {
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     background-color: silver;
     padding: 5px;
     width: 20%;
 }
+
