@@ -1,4 +1,5 @@
 import { displayTask } from "../dom-related/dom";
+import { createTaskStructure } from "../dom-related/dom";
 
 const form = document.querySelector('form');
 
@@ -15,5 +16,5 @@ form.addEventListener('submit', (e) => {
 
     displayTask();
 
-    form.reset();
+    form.reset(); // clears data previously entered into the form's inputs after submission
 })
