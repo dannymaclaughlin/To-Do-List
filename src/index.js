@@ -8,5 +8,5 @@ const newTaskButton = document.getElementById('new-task-button');
 
 // an eventlistener for when the 'NewTaskButton' is clicked
 newTaskButton.addEventListener('click', function() {
-    displayForm(); // makes modal visible(which contains the form)
+    displayForm(); // displays the modal (which contains the form)
 });

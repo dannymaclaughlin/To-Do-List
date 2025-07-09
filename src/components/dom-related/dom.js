@@ -10,16 +10,16 @@ const submitButton = document.querySelector("#submit-button");
 
 // display's form
 export function displayForm() {
-    const modal = document.getElementById("my-modal");
-    const formSubmitButton = document.getElementById("submit-button");
+    const modal = document.getElementById("my-modal"); // grabs the html element with the ID "my-modal" and assigns it to the "modal" variable
+    const formSubmitButton = document.getElementById("submit-button"); // grabs the submit button html element and assigns it to a variable.
 
-    modal.style.display = "block"; // when displayForm() is executed, the modal's display is set to block(visible)
+    modal.style.display = "block"; // when displayForm() is executed, the modal's display is set to block(visible). by default, the modal's display is set to none via the styles.css file
 
     formSubmitButton.onclick = function() { // modal's display is set to none(not visible) upon click of the form submit button
         modal.style.display = "none";
     };
     
-    window.onclick = function(e) { // 
+    window.onclick = function(e) { // clicking anywhere outside of the modal sets the modal's display to none
         if (e.target == modal) {
             modal.style.display = "none";
         };
@@ -33,12 +33,13 @@ export function displayTask() {
         dueDate.append(dueDateInput.value);
 };
 
-export function createTaskStructure() {
+export function createTaskStructure() { // creates the structure of what an individual task should look like
     const taskOutputArea = document.querySelector("#task-output-area");
 
     const newDiv = document.createElement("div"); // creates a new div
         newDiv.classList.add("task-div-element"); // gives the newly created div a class of ".task-div-element"
         taskOutputArea.append(newDiv); // appends newDiv to taskOutputArea
+
     const checkbox = document.createElement("input"); // creates an input
         checkbox.type = "checkbox"; // gives the input a type of checkbox
         checkbox.id = "checkbox";
@@ -54,5 +55,21 @@ export function createTaskStructure() {
         dueDate.classList.add("duedate-div");
         newDiv.append(dueDate);
 
+        const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            newDiv.append(deleteButton);
+
     return { checkboxLabel, taskDescription, dueDate }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
+
+function deleteTask() {
+
+};
+
+export function loopArray() {
+    for (let i = 0; i < taskListArray.length; i++) {
+        for (let j = 0; j < taskListArray[i].length; j++) {
+            // console.log(taskListArray[i][j][1]);
+        };
+    };
+};
