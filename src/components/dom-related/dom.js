@@ -33,15 +33,16 @@ export function displayTask() {
         dueDate.append(dueDateInput.value);
 };
 
+let counter = 0; // counter used in createDiv() function. moved outside of the createTaskStructure function for persistance.
 export function createTaskStructure() { // creates the structure of what an individual task should look like
     const taskOutputArea = document.querySelector("#task-output-area");
 
-    let counter = 0;
     function createDiv() {
         const newDiv = document.createElement("div"); // creates a new div
-        newDiv.classList.add("task-div-element" + counter); // gives the newly created div a class of ".task-div-element"
+        newDiv.classList.add('task-div-element' + counter); // gives the newly created div a class of ".task-div-element"
         taskOutputArea.append(newDiv); // appends newDiv to taskOutputArea
         counter++;
+        console.log(counter);
 
         return newDiv;
     }
