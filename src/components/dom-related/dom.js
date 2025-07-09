@@ -36,9 +36,16 @@ export function displayTask() {
 export function createTaskStructure() { // creates the structure of what an individual task should look like
     const taskOutputArea = document.querySelector("#task-output-area");
 
-    const newDiv = document.createElement("div"); // creates a new div
-        newDiv.classList.add("task-div-element"); // gives the newly created div a class of ".task-div-element"
+    let counter = 0;
+    function createDiv() {
+        const newDiv = document.createElement("div"); // creates a new div
+        newDiv.classList.add("task-div-element" + counter); // gives the newly created div a class of ".task-div-element"
         taskOutputArea.append(newDiv); // appends newDiv to taskOutputArea
+        counter++;
+
+        return newDiv;
+    }
+    const newDiv = createDiv();
 
     const checkbox = document.createElement("input"); // creates an input
         checkbox.type = "checkbox"; // gives the input a type of checkbox
@@ -66,10 +73,10 @@ function deleteTask() {
 
 };
 
-export function loopArray() {
-    for (let i = 0; i < taskListArray.length; i++) {
-        for (let j = 0; j < taskListArray[i].length; j++) {
-            // console.log(taskListArray[i][j][1]);
-        };
-    };
-};
+// export function loopArray() {
+//     for (let i = 0; i < taskListArray.length; i++) {
+//         for (let j = 0; j < taskListArray[i].length; j++) {
+//             console.log(taskListArray[i][j][1]);
+//         };
+//     };
+// };
