@@ -55,17 +55,30 @@ export function createTaskStructure() { // creates the structure of what an indi
         checkboxLabel.append(checkbox); // appends the checkbox input to the label
         newDiv.append(checkboxLabel); // appends the checkbox label to newDiv
     
+    // div (split into two divs)
+        // div 1 (will stay empty; used for spacing)
+        // div 2 (will house task description , due date, & delete button)
+    const taskContentContainer = document.createElement("div");
+        taskContentContainer.classList.add("task-content-container-div");
+        newDiv.append(taskContentContainer);
+        const spacerDiv = document.createElement("div");
+            spacerDiv.classList.add("spacer-div");
+            taskContentContainer.append(spacerDiv);
+        const taskContentDiv = document.createElement("div");
+            taskContentDiv.classList.add("task-content-div");
+            taskContentContainer.append(taskContentDiv);
+    
     const taskDescription = document.createElement("div");
         taskDescription.classList.add("task-description-div");
-        newDiv.append(taskDescription);
+        taskContentDiv.append(taskDescription);
 
     const dueDate = document.createElement("div");
         dueDate.classList.add("duedate-div");
-        newDiv.append(dueDate);
+        taskContentDiv.append(dueDate);
 
         const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
-            newDiv.append(deleteButton);
+            taskContentDiv.append(deleteButton);
 
     return { checkboxLabel, taskDescription, dueDate }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }

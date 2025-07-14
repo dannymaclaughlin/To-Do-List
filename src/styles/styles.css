@@ -1,3 +1,18 @@
+body {
+    background-color: #23262a;
+    padding-top: .5em;
+    padding-left: 3em;
+    font-family: helvetica, sans-serif;
+}
+
+body > h1 {
+    color: #fcfcf7;
+}
+
+#main-container {
+    padding-left: 2em;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -27,11 +42,37 @@
     padding-bottom: .5em;
 }
 
-.task-div-element {
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: silver;
-    padding: 5px;
-    width: 20%;
+/*  */
+#task-output-area > div {
+    color: #fcfcf7;
+    font-size: .8em;
 }
 
+/* adjustments to task name */
+#task-output-area > div > label {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.task-content-container-div {
+    display: flex;
+}
+
+.spacer-div {
+    flex: 1;
+}
+
+.task-content-div {
+    flex: 90;
+}
+
+* > button {
+    background: #23262a;
+    background-color: #fcfcf7;
+    border-radius: 3px;
+    border: none;
+}
+
+#new-task-button {
+    padding: 5px;
+}
