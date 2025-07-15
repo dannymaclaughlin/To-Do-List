@@ -77,6 +77,7 @@ export function createTaskStructure() { // creates the structure of what an indi
         taskContentDiv.append(dueDate);
 
         const deleteButton = document.createElement("button");
+            deleteButton.classList.add("delete-button");
             deleteButton.textContent = "Delete";
             taskContentDiv.append(deleteButton);
 
