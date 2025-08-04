@@ -55,9 +55,6 @@ export function createTaskStructure() { // creates the structure of what an indi
         checkboxLabel.append(checkbox); // appends the checkbox input to the label
         newDiv.append(checkboxLabel); // appends the checkbox label to newDiv
     
-    // div (split into two divs)
-        // div 1 (will stay empty; used for spacing)
-        // div 2 (will house task description , due date, & delete button)
     const taskContentContainer = document.createElement("div");
         taskContentContainer.classList.add("task-content-container-div");
         newDiv.append(taskContentContainer);
@@ -77,21 +74,16 @@ export function createTaskStructure() { // creates the structure of what an indi
         taskContentDiv.append(dueDate);
 
         const deleteButton = document.createElement("button");
-            deleteButton.classList.add("delete-button");
+            deleteButton.id = "delete-button";
             deleteButton.textContent = "Delete";
             taskContentDiv.append(deleteButton);
+            deleteButton.addEventListener("click", function() {
+                console.log("delete button clicked");
+            })
 
-    return { checkboxLabel, taskDescription, dueDate }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
+    return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
 
-function deleteTask() {
-
-};
-
-// export function loopArray() {
-//     for (let i = 0; i < taskListArray.length; i++) {
-//         for (let j = 0; j < taskListArray[i].length; j++) {
-//             console.log(taskListArray[i][j][1]);
-//         };
-//     };
+// export function deleteTask() {
+//     alert('test. delete button clicked!');
 // };

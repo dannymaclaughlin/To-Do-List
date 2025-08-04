@@ -9,4 +9,5 @@ const newTaskButton = document.getElementById('new-task-button');
 // an eventlistener for when the 'NewTaskButton' is clicked
 newTaskButton.addEventListener('click', function() {
     displayForm(); // displays the modal (which contains the form)
+    console.log("New Task button has been clicked."); // test line
 });
