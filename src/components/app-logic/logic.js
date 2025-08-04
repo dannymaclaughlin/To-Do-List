@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
     const formData = new FormData(form); // passes a reference(to the form) into the FormData constructor — this creates a special type of iterable object.
     const formDataObject = Object.fromEntries(formData); // transforms the 'formData' iterable object into a regular object.
     taskListArray.push(formDataObject); // pushes the formDataObject to the taskListArray upon form submission
-        // console.log(taskListArray);
+        console.log(taskListArray);
         // console.log(formDataObject.taskDescription);
 
     displayTask();

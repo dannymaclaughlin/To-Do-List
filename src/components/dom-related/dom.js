@@ -39,9 +39,8 @@ export function createTaskStructure() { // creates the structure of what an indi
 
     function createDiv() {
         const newDiv = document.createElement("div"); // creates a new div
-        newDiv.classList.add('task-div-element' + counter); // gives the newly created div a class of ".task-div-element"
+        newDiv.classList.add('task-div-element'); // gives the newly created div a class of ".task-div-element"
         taskOutputArea.append(newDiv); // appends newDiv to taskOutputArea
-        counter++;
         console.log(counter);
 
         return newDiv;
@@ -78,12 +77,11 @@ export function createTaskStructure() { // creates the structure of what an indi
             deleteButton.textContent = "Delete";
             taskContentDiv.append(deleteButton);
             deleteButton.addEventListener("click", function() {
-                console.log("delete button clicked");
+                console.log("delete button clicked"); // test log
+                const parentDiv = this.closest(".task-div-element");
+                console.log(parentDiv);
+                parentDiv.remove();
             })
 
     return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
-
-// export function deleteTask() {
-//     alert('test. delete button clicked!');
-// };
