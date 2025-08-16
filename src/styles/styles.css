@@ -3,13 +3,17 @@ body {
     padding-top: .5em;
     padding-left: 3em;
     font-family: helvetica, sans-serif;
+
+    color: #fcfcf7;
 }
 
 body > h1 {
     color: #fcfcf7;
 }
 
-#main-container {
+#content-container {
+    border: 2px solid blue;
+    
     padding-left: 2em;
 }
 
@@ -81,4 +85,20 @@ body > h1 {
     margin-top: 1em;
     padding: 4px;
     width: 6em;
+}
+
+#projectNavBar {
+    border: 2px solid red;
+}
+
+#main-container {
+    border: 2px solid green;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#projectNavBar {
+    display: flex;
+    justify-content: center;
 }

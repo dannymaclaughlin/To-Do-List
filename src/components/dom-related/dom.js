@@ -11,15 +11,15 @@ const submitButton = document.querySelector("#submit-button");
 // display's form
 export function displayForm() {
     const modal = document.getElementById("my-modal"); // grabs the html element with the ID "my-modal" and assigns it to the "modal" variable
-    const formSubmitButton = document.getElementById("submit-button"); // grabs the submit button html element and assigns it to a variable.
+    const formSubmitButton = document.getElementById("submit-button"); // grabs the submit button html element(in modal) and assigns it to a variable.
 
     modal.style.display = "block"; // when displayForm() is executed, the modal's display is set to block(visible). by default, the modal's display is set to none via the styles.css file
 
-    formSubmitButton.onclick = function() { // modal's display is set to none(not visible) upon click of the form submit button
+    formSubmitButton.onclick = function() { // form modal's display is set to none(not visible) upon click of the form submit button. essentially hides form modal after submit button is clicked.
         modal.style.display = "none";
     };
     
-    window.onclick = function(e) { // clicking anywhere outside of the modal sets the modal's display to none
+    window.onclick = function(e) { // clicking anywhere outside of the form modal sets the modal's display to none (makes it disappear)
         if (e.target == modal) {
             modal.style.display = "none";
         };
@@ -77,11 +77,12 @@ export function createTaskStructure() { // creates the structure of what an indi
             deleteButton.textContent = "Delete";
             taskContentDiv.append(deleteButton);
             deleteButton.addEventListener("click", function() {
-                console.log("delete button clicked"); // test log
-                const parentDiv = this.closest(".task-div-element");
-                console.log(parentDiv);
-                parentDiv.remove();
+                // console.log("delete button clicked"); // test log
+                // const parentDiv = this.closest(".task-div-element");
+                // console.log(parentDiv);
+                // parentDiv.remove();
             })
 
     return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
+
