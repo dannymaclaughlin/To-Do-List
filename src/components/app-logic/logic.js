@@ -1,10 +1,8 @@
 import { displayTask } from "../dom-related/dom";
-import { createTaskStructure } from "../dom-related/dom";
-// test
-import { loopArray } from "../dom-related/dom";
 
 const form = document.querySelector('form');
 
+const projectArray = []; // an array to hold list of project objects
 export const taskListArray = []; // an array outside of the submit eventlistener to store converted formData objects(tasks)
 
 // an eventlistener for when the form is submitted. executes below function upon form submission.

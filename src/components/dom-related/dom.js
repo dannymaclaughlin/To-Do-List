@@ -77,10 +77,10 @@ export function createTaskStructure() { // creates the structure of what an indi
             deleteButton.textContent = "Delete";
             taskContentDiv.append(deleteButton);
             deleteButton.addEventListener("click", function() {
-                // console.log("delete button clicked"); // test log
-                // const parentDiv = this.closest(".task-div-element");
-                // console.log(parentDiv);
-                // parentDiv.remove();
+                console.log("delete button clicked"); // test log
+                const parentDiv = this.closest(".task-div-element");
+                console.log(parentDiv);
+                parentDiv.remove();
             })
 
     return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
