@@ -1,8 +1,8 @@
 import { displayTask } from "../dom-related/dom";
 
+// TASKS SECTION
 const form = document.querySelector('form');
 
-const projectArray = []; // an array to hold list of project objects
 export const taskListArray = []; // an array outside of the submit eventlistener to store converted formData objects(tasks)
 
 // an eventlistener for when the form is submitted. executes below function upon form submission.
@@ -19,3 +19,7 @@ form.addEventListener('submit', (e) => {
 
     form.reset(); // clears data previously entered into the form's inputs after submission
 })
+
+//  PROJECTS SECTION
+const projectArray = []; // an empty array to hold all of the project objects
+

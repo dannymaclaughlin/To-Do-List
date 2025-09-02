@@ -1,5 +1,6 @@
 import { taskListArray } from "../app-logic/logic";
 
+// TASK SECTION
 const tasknameInput = document.querySelector("#taskname");
 const tasknameOutput = document.querySelector("#taskname-output");
 const taskDescriptionInput = document.querySelector("#task-description");
@@ -86,3 +87,10 @@ export function createTaskStructure() { // creates the structure of what an indi
     return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
 
+// PROJECT SECTION
+const newProjectButton = document.querySelector("#new-project-button");
+
+newProjectButton.addEventListener("click", function() {
+    // test
+    alert("hello")
+});
