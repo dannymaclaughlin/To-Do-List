@@ -90,7 +90,33 @@ export function createTaskStructure() { // creates the structure of what an indi
 // PROJECT SECTION
 const newProjectButton = document.querySelector("#new-project-button");
 
+// adds a click eventlistener to the new project button and executes this function:
 newProjectButton.addEventListener("click", function() {
-    // test
-    alert("hello")
+    // TODO: dynamically create a form. 
+    // this form should have a text input and a submit buttton.
+    const projectListArea = document.querySelector("#project-list-area");
+
+    // create form
+    const projectForm = document.createElement("form");
+    projectForm.id = "projectForm";
+    
+    const textInput = document.createElement("input");
+        textInput.setAttribute("type", "text");
+        textInput.setAttribute("name", "projectName");
+        textInput.setAttribute("id", "projectNameInput");
+        textInput.setAttribute("placeholder", "Enter new project name.");
+        projectForm.appendChild(textInput);
+    const submitButton = document.createElement("input");
+        submitButton.setAttribute("type", "submit");
+        submitButton.setAttribute("value", "submit");
+        projectForm.appendChild(submitButton);
+
+        // click eventlistener for submit button
+        submitButton.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            console.log("submit button has been clicked");
+            projectForm.reset();
+        })
+    projectListArea.appendChild(projectForm);
 });
