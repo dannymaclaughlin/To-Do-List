@@ -113,3 +113,8 @@ body > h1 {
     margin-top: 1em;
     padding: 4px;
 }
+
+#project-list-area > text {
+    display: flex;
+    flex-direction: column;
+}

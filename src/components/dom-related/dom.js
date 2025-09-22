@@ -124,7 +124,12 @@ newProjectButton.addEventListener("click", function() {
             const formInputValue = formInput.value;
             console.log(formInputValue); // test log to see output for formInputValue
 
-            projectForm.replaceWith(formInputValue);
+            const projectNameDiv = document.createElement("div");
+            projectListArea.appendChild(projectNameDiv);
+            projectNameDiv.textContent = formInputValue;
+            projectForm.remove();
+
+            // projectForm.replaceWith(formInputValue);
 
             console.log("submit button has been clicked"); // test log
             projectForm.reset(); // resets form field after submission
