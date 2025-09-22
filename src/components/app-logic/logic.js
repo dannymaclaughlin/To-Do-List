@@ -22,4 +22,3 @@ form.addEventListener('submit', (e) => {
 
 //  PROJECTS SECTION
 const projectArray = []; // an empty array to hold all of the project objects
-
