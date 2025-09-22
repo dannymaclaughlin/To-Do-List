@@ -119,9 +119,12 @@ newProjectButton.addEventListener("click", function() {
         projectForm.addEventListener("submit", function(e) {
             e.preventDefault(); // prevents page from auto-refreshing after submission
 
+            // handles data after form submission
             const formInput = document.querySelector("#projectNameInput");
             const formInputValue = formInput.value;
             console.log(formInputValue); // test log to see output for formInputValue
+
+            projectForm.replaceWith(formInputValue);
 
             console.log("submit button has been clicked"); // test log
             projectForm.reset(); // resets form field after submission
