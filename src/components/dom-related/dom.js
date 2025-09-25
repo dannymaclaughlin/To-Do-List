@@ -27,13 +27,6 @@ export function displayForm() {
     };
 };
 
-export function displayTask() {
-    let { checkboxLabel, taskDescription, dueDate } = createTaskStructure(); // creates a reference to the returned elements of the createTaskStructure function
-        checkboxLabel.append(tasknameInput.value); // appends the value of tasknameInput to checkboxLabel(which is essentially a reference to checkboxLabel in the createTaskStructure function
-        taskDescription.append(taskDescriptionInput.value);
-        dueDate.append(dueDateInput.value);
-};
-
 let counter = 0; // counter used in createDiv() function. moved outside of the createTaskStructure function for persistance.
 export function createTaskStructure() { // creates the structure of what an individual task should look like
     const taskOutputArea = document.querySelector("#task-output-area");
@@ -87,6 +80,13 @@ export function createTaskStructure() { // creates the structure of what an indi
     return { checkboxLabel, taskDescription, dueDate, deleteButton }; // returns checkboxLabel so that it can be used outside of this createTaskStructure function
 }
 
+export function displayTask() {
+    let { checkboxLabel, taskDescription, dueDate } = createTaskStructure(); // creates a reference to the returned elements of the createTaskStructure function
+        checkboxLabel.append(tasknameInput.value); // appends the value of tasknameInput to checkboxLabel(which is essentially a reference to checkboxLabel in the createTaskStructure function
+        taskDescription.append(taskDescriptionInput.value);
+        dueDate.append(dueDateInput.value);
+};
+
 // PROJECT SECTION
 // reference to the new project button in the html file
 const newProjectButton = document.querySelector("#new-project-button");
@@ -94,11 +94,7 @@ const newProjectButton = document.querySelector("#new-project-button");
 // adds a click eventlistener to the new project button,
 // and executes this function:
 newProjectButton.addEventListener("click", function() {
-    // TO DO: dynamically create a form. 
-    // this form should have a text input and a submit buttton.
-
-    // reference to the "project list area" in the html file
-    const projectListArea = document.querySelector("#project-list-area");
+    const projectListArea = document.querySelector("#project-list-area"); // reference to the "project list area" in the html file
 
     // create form
     const projectForm = document.createElement("form");
@@ -123,13 +119,12 @@ newProjectButton.addEventListener("click", function() {
             const formInput = document.querySelector("#projectNameInput");
             const formInputValue = formInput.value;
             console.log(formInputValue); // test log to see output for formInputValue
-
+            // creates a new div element within #project-list-area
             const projectNameDiv = document.createElement("div");
+            projectNameDiv.classList.add(formInputValue);
             projectListArea.appendChild(projectNameDiv);
-            projectNameDiv.textContent = formInputValue;
-            projectForm.remove();
-
-            // projectForm.replaceWith(formInputValue);
+            projectNameDiv.textContent = formInputValue; // sets the textcontent of the div to the submitted form input value
+            projectForm.remove(); // removes the form input
 
             console.log("submit button has been clicked"); // test log
             projectForm.reset(); // resets form field after submission
